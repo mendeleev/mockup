@@ -1,0 +1,18 @@
+<h1>{{task.name}}</h1>
+<h2>{{task.question}}</h2>
+
+<div class="task">
+<form>
+	<ul class="options">
+		<li ng-repeat="option in task.options">
+			<div class="img">
+				<img ng-src="app/data/images/pictures/{{task.imgPath}}/{{option.img}}"}}" alt="" />
+			</div>
+			<div class="answer">
+				<p ng-show="ex.isExample">Example:</p>
+				<label>{{option.option}} <input type="text" name="1" /></label>
+			</div>
+		</li>
+	</ul>
+</form>
+</div>

@@ -1,0 +1,179 @@
+* {
+	margin:0; 
+	padding: 0;
+	font-family: verdana, sans-serif;
+}
+
+h1 {
+	color:#4654AB;
+	font-weight: bold;
+}
+
+h2 {
+	font-size:18px;
+}
+
+.wrapper {
+	width:960px;
+	margin:0 auto;
+}
+
+.container {
+	min-height:500px;
+	background: #f6f5f5;
+	padding:20px;
+	position: relative;
+}
+
+.content {
+
+}
+
+.task {
+	margin:0 100px;
+}
+
+.navigation {
+	width:100%;
+	height: 60px;
+	margin-top: 20px;
+}
+
+ul.options {
+	list-style: none;
+	overflow: hidden;
+	text-align: center;
+}
+
+	ul.options li {
+		display: block;
+		float:left;
+		width:200px;
+		margin:20px;
+	}
+
+	.img {
+		width:200px;
+		height: 130px;
+	}
+
+	.img img {
+		max-width: 200px
+		max-height: 130px;
+	}
+
+	.answer {
+		height: 65px;
+		border:1px solid transparent;
+		text-align: left;
+	}
+
+	.answer label {
+		padding: 8px;
+		font-size: 11px;
+		font-weight: bold;
+	}
+
+	.answer input {
+		margin-top: 10px;
+		padding: 2px;
+		width:70px;
+		border:none;
+		background: #fff;
+		border:1px solid #cacaca;
+	}
+
+	.example {		
+		background: #e6eaee;
+		border-color: #c7d6df;
+	}
+
+	.example input {
+		margin-top:0;
+	}
+
+	.example p {
+		padding: 8px;
+		font-size: 12px;
+		font-weight: bold;
+	}
+
+ul.variants {
+	list-style: none;
+	overflow: hidden;
+	text-align: center;
+	background: #e6eaee;
+	width:90%;
+	padding: 10px 0;
+	margin:10px 0;
+	border:1px solid #c7d6df;
+	margin:0 auto;
+	font-size:12px;
+}
+
+ul.variants li {
+	display: inline;
+	padding: 5px;
+}
+
+.prev, .next {
+	display:block;
+	width:35px;
+	height: 35px;
+	background: #09c;
+	margin:5px;
+	border-radius: 25px;
+	float: left;
+	position: relative;
+	cursor: pointer;
+}
+
+.prev:before {
+	content: "";
+	display: block;
+	position: absolute;
+	border:10px solid transparent;
+	border-right-color: #fff; 
+	top:7px;
+	left:0;
+}
+
+.next:before {
+	content: "";
+	display: block;
+	position: absolute;
+	border:10px solid transparent;
+	border-left-color: #fff; 
+	top:7px;
+	left:13px;
+}
+
+button {
+	position: absolute;
+	bottom:24px;
+	right:20px;
+	padding: 5px;
+	cursor: pointer;
+}
+
+ul.nav-icons {
+	list-style: none;
+}
+
+	.nav-icons li {
+		display: inline-block;
+	}
+
+	.nav-icons li a {
+		display:block;
+		width:30px;
+		height:30px;
+		margin:10px 5px;
+		text-align: center;
+		line-height: 30px;
+		vertical-align: 30px;
+		background: #09c;
+		color:#fff;
+		text-decoration: none;
+		border-radius:15px;
+	}

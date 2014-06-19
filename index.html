@@ -1,0 +1,26 @@
+<!doctype html>
+<html ng-app="Mockup">
+<head>
+	<title>IOKI mockup</title>
+	<link rel="stylesheet" type="text/css" href="styles/style.css" />
+	<script src="libs/angular.min.js"></script>
+	<script src="libs/angular-route.min.js"></script>
+	<script src="app/scripts/app.js"></script>
+	<script src="app/scripts/controllers.js"></script>
+	<script src="app/scripts/directives.js"></script>
+	<script src="app/scripts/test.js"></script>
+	<script src="app/scripts/routes.js"></script>
+</head>
+<body>	
+
+	<div class="wrapper">
+		<section class="container">
+			<div class="content">
+				<div ng-view></div>
+			</div>
+			<button id="check">Continue</button>
+		</section>
+		<navigation-bar></navigation-bar>
+	</div>
+</body>
+</html>

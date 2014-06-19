@@ -1,0 +1,43 @@
+{
+	"name": "Exercise 3 Vocabulary",
+	"question": "Label the weather symbols",
+	"imgPath": "example1",
+	"options": [  					
+					{
+						"option": 1,
+						"answer": "foggy",
+						"img": "1.png",
+						"isExample": true
+					},
+					{
+						"option": 2,
+						"answer": "raining",
+						"img": "2.png",
+						"isExample": false
+					},
+					{
+						"option": 3,
+						"answer": "sunny",
+						"img": "3.png",
+						"isExample": false
+					},
+					{
+						"option": 4,
+						"answer": "cloudy",
+						"img": "4.png",
+						"isExample": false
+					},
+					{
+						"option": 5,
+						"answer": "windy",
+						"img": "5.png",
+						"isExample": false
+					},
+					{
+						"option": "6",
+						"answer": "snowing",
+						"img": "6.png",
+						"isExample": false
+					}
+  				]
+}

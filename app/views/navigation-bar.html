@@ -1,0 +1,8 @@
+<section class="navigation">
+	<span ng-click="prevTask()" class="prev"></span>
+	<span ng-click="nextTask()" class="next"></span>
+
+	<ul class="nav-icons">
+		<li ng-repeat="t in test"><a href="#/{{t.option}}" title="{{t.name}}">{{t.option}}</a></li>
+	</ul>
+</section>

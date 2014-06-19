@@ -1,0 +1,32 @@
+<div ng-controller="routeCtrl as task">
+
+<h1>{{task.name}}</h1>
+<h2>{{task.exercises[0].name}}</h2>
+
+<div class="task">
+<form>
+	<ul class="options">
+		<li ng-repeat="ex in task.exercises[0].questions[0].options">
+			<div class="img">
+				<img ng-src="app/data/images/pictures/exercise2/{{ex.img}}" + 2}}" alt="" />
+			</div>			
+			<div class="answer example">
+				<p ng-show="ex.isExample">Example:</p>
+				<label>1 <input type="text" name="1" /></label>
+			</div>
+		</li>		
+	</ul>
+</form>
+
+<ul class="variants">
+	<li>snowing</li>
+	<li>clowdy</li>
+	<li>raining</li>
+	<li>foggy</li>
+	<li>windy</li>
+	<li>sunny</li>
+</ul>
+
+</div>
+
+</div>
