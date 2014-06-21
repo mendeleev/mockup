@@ -11,9 +11,16 @@ ctrl.controller('MainCtrl', function($scope) {
 ctrl.controller('taskCtrl', ['$scope', '$http', function($scope, $http) {
 
 	$scope.task = null;
+	$scope.ttt = null;
+
 	$http.get("app/data/test.json").success(function(data) {
 		$scope.task = data;
 	});
+
+	$scope.testData = function() {
+		$scope.ttt = angular.copy($scope.answers);
+		console.log($scope.answers);
+	};
 }]);
 
 ctrl.controller('routeCtrl', ['$scope', '$routeParams', '$http', 
@@ -46,15 +53,41 @@ ctrl.controller('navigationCtrl', ['$scope', '$routeParams', '$http', '$location
 
 var navOptions = [
 			{
-				"option": 1,
-				"name": "something"
+				"exercise": 1,
+				"tasks": [
+					{
+						"id": 1,
+						"name": "Hello"
+					},
+					{
+						"id": 2,
+						"name": "Hello World"
+					},
+					{
+						"id": 3,
+						"name": "What's up?"
+					}
+				]
 			},
 			{
-				"option": 2,
-				"name": "number two"
-			},
-			{
-				"option": 3,
-				"name": "The third one"
+				"exercise": 2,
+				"tasks": [
+					{
+						"id": 4,
+						"name": "Hello"
+					},
+					{
+						"id": 5,
+						"name": "Hello World"
+					},
+					{
+						"id": 6,
+						"name": "What's up?"
+					},
+					{
+						"id": 4,
+						"name": "May I come in?"
+					}
+				]
 			}
 		];

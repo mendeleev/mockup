@@ -1,0 +1,21 @@
+{
+  "name": "Lesson 1",
+  "exercises": [
+  	{
+  		"name": "Exercise 3 Vocabulary",
+  		"questions": [
+  			{
+  				"question": "Label the weather symbols",
+  				"options": [  					
+					{
+						"option": "1",
+						"answer": "foggy",
+						"img": "1.png",
+						"isExample": true
+					}
+  				]
+  			}
+  		]
+  	}
+  ]
+}

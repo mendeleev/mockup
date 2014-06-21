@@ -4,15 +4,19 @@
 <div class="task">
 <form>
 	<ul class="options">
-		<li ng-repeat="option in task.options">
+		<li ng-repeat="option in task.options">			
 			<div class="img">
 				<img ng-src="app/data/images/pictures/{{task.imgPath}}/{{option.img}}"}}" alt="" />
 			</div>
 			<div class="answer">
 				<p ng-show="ex.isExample">Example:</p>
-				<label>{{option.option}} <input type="text" name="1" /></label>
+				<label>{{$index + 1}} <input type="text" ng-model="answers" name="1" /></label>
 			</div>
 		</li>
+	</ul>
+
+	<ul class="variants">
+		<li ng-repeat="op in task.options">{{op.answer}}</li>
 	</ul>
 </form>
 </div>

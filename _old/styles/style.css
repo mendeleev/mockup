@@ -116,7 +116,7 @@ ul.variants li {
 	padding: 5px;
 }
 
-.prev, .next {
+a.prev, a.next {
 	display:block;
 	width:35px;
 	height: 35px;
@@ -125,14 +125,9 @@ ul.variants li {
 	border-radius: 25px;
 	float: left;
 	position: relative;
-	cursor: pointer;
 }
 
-.prev:hover, .next:hover {
-	background: #0ac;
-}
-
-.prev:before {
+a.prev:before {
 	content: "";
 	display: block;
 	position: absolute;
@@ -142,7 +137,7 @@ ul.variants li {
 	left:0;
 }
 
-.next:before {
+a.next:before {
 	content: "";
 	display: block;
 	position: absolute;
@@ -159,25 +154,3 @@ button {
 	padding: 5px;
 	cursor: pointer;
 }
-
-ul.nav-icons {
-	list-style: none;
-}
-
-	.nav-icons li {
-		display: inline-block;
-	}
-
-	.nav-icons li a {
-		display:block;
-		width:30px;
-		height:30px;
-		margin:10px 5px;
-		text-align: center;
-		line-height: 30px;
-		vertical-align: 30px;
-		background: #09c;
-		color:#fff;
-		text-decoration: none;
-		border-radius:15px;
-	}
