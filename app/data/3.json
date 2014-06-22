@@ -1,41 +1,41 @@
 {
 	"name": "Exercise 3 Vocabulary",
-	"question": "What will be the second task?",
-	"imgPath": "exercise1",
+	"question": "Label the pictures",
+	"imgPath": "exercise3",
 	"options": [  					
 					{
 						"option": 1,
-						"answer": "foggy",
+						"answer": "baloons",
 						"img": "1.png",
 						"isExample": true
 					},
 					{
 						"option": 2,
-						"answer": "raining",
+						"answer": "car",
 						"img": "2.png",
 						"isExample": false
 					},
 					{
 						"option": 3,
-						"answer": "sunny",
+						"answer": "present",
 						"img": "3.png",
 						"isExample": false
 					},
 					{
 						"option": 4,
-						"answer": "cloudy",
+						"answer": "jam",
 						"img": "4.png",
 						"isExample": false
 					},
 					{
 						"option": 5,
-						"answer": "windy",
+						"answer": "scissors",
 						"img": "5.png",
 						"isExample": false
 					},
 					{
-						"option": "6",
-						"answer": "snowing",
+						"option": 6,
+						"answer": "wallet",
 						"img": "6.png",
 						"isExample": false
 					}
