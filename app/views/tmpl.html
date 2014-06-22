@@ -10,7 +10,7 @@
 			</div>
 			<div class="answer">
 				<p ng-show="ex.isExample">Example:</p>
-				<label>{{$index + 1}} <input type="text" ng-model="answers" name="1" /></label>
+				<label>{{$index + 1}} <input type="text" ng-model="answers[$index]" name="1" /></label>
 			</div>
 		</li>
 	</ul>
@@ -20,3 +20,4 @@
 	</ul>
 </form>
 </div>
+{{answers}}
