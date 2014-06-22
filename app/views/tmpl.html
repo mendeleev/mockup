@@ -12,7 +12,7 @@
 				<p ng-show="option.isExample">Example:</p>
 				<label>{{$index + 1}} 
 					<input type="text" ng-model="answers[$index]" name="a{{$index}}" id="a{{$index}}" required />
-					<span ng-show="showValidation">{{answers}}</span>
+					<span ng-show="showValidation">{{validateAnswer($index)}}</span>
 				</label>
 			</div>
 		</li>

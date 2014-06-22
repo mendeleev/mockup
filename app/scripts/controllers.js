@@ -11,6 +11,13 @@ ctrl.controller('taskCtrl', ['$scope', '$routeParams', '$http',
 
 		var matchAnswer = function(answer1, answer2) {
 			return answer1.toLowerCase() === answer2.toLowerCase();
+		};
+
+		$scope.validateAnswer = function(index) {
+			var answer1 = $scope.task.options[index].answer;
+			var answer2 = $scope.answers[index];
+
+			if(answer2) return matchAnswer(answer1, answer2);
 		};	
 
 		$scope.checkAnswers = function() {
@@ -25,9 +32,6 @@ ctrl.controller('taskCtrl', ['$scope', '$routeParams', '$http',
 				if($scope.answers[i]) {
 					var match = matchAnswer($scope.task.options[i].answer, $scope.answers[i]);
 					$scope.answers[i].isCorrect = match;
-					console.log($scope.task.options[i].answer);
-					console.log($scope.answers[i]);
-					console.log(match);
 				} else {
 					console.log($scope.answers[i]);
 				}				
