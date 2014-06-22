@@ -5,7 +5,7 @@ routes.config(["$routeProvider",
 		$routeProvider.			
 			when("/:testId", {
 				templateUrl: "app/views/tmpl.html",
-				controller: "routeCtrl",
+				controller: "taskCtrl",
 				controllerAs: "task"
 			}).
 			otherwise({

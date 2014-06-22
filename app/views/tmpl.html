@@ -2,15 +2,18 @@
 <h2>{{task.question}}</h2>
 
 <div class="task">
-<form>
+<form name="taskForm" novalidate>
 	<ul class="options">
 		<li ng-repeat="option in task.options">			
 			<div class="img">
 				<img ng-src="app/data/images/pictures/{{task.imgPath}}/{{option.img}}"}}" alt="" />
 			</div>
 			<div class="answer">
-				<p ng-show="ex.isExample">Example:</p>
-				<label>{{$index + 1}} <input type="text" ng-model="answers[$index]" name="1" /></label>
+				<p ng-show="option.isExample">Example:</p>
+				<label>{{$index + 1}} 
+					<input type="text" ng-model="answers[$index]" name="a{{$index}}" id="a{{$index}}" required />
+					<span ng-show="showValidation">{{answers}}</span>
+				</label>
 			</div>
 		</li>
 	</ul>
@@ -19,5 +22,7 @@
 		<li ng-repeat="op in task.options">{{op.answer}}</li>
 	</ul>
 </form>
+
+<button id="check" ng-click="checkAnswers()">Continue</button>
 </div>
 {{answers}}

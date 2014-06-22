@@ -1,15 +1,37 @@
 var ctrl = angular.module('Controllers', ['testControllers']);
 
-ctrl.controller('routeCtrl', ['$scope', '$routeParams', '$http', 
+ctrl.controller('taskCtrl', ['$scope', '$routeParams', '$http', 
 	function($scope, $routeParams, $http) {
 		$scope.task = null;
 		$scope.answers = {};
+		$scope.showValidation = false;
 		$http.get('app/data/' + $routeParams.testId + '.json').success(function(data) {
 			$scope.task = data;			
 		});
 
+		var matchAnswer = function(answer1, answer2) {
+			return answer1.toLowerCase() === answer2.toLowerCase();
+		};	
+
 		$scope.checkAnswers = function() {
-			console.log($scope.answers);
+
+			if($scope.showValidation) { 
+				$scope.showValidation = false; 
+			} else {
+				$scope.showValidation = true;
+			}
+
+			for(var i = 0; i < $scope.task.options.length; i++) {
+				if($scope.answers[i]) {
+					var match = matchAnswer($scope.task.options[i].answer, $scope.answers[i]);
+					$scope.answers[i].isCorrect = match;
+					console.log($scope.task.options[i].answer);
+					console.log($scope.answers[i]);
+					console.log(match);
+				} else {
+					console.log($scope.answers[i]);
+				}				
+			}
 		};
 	}
 ]);
