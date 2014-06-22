@@ -13,12 +13,24 @@ ctrl.controller('taskCtrl', ['$scope', '$routeParams', '$http',
 			return answer1.toLowerCase() === answer2.toLowerCase();
 		};
 
-		$scope.validateAnswer = function(index) {
+		var validateAnswer = function(index) {
 			var answer1 = $scope.task.options[index].answer;
 			var answer2 = $scope.answers[index];
 
-			if(answer2) return matchAnswer(answer1, answer2);
-		};	
+			if(answer2) { 
+				return matchAnswer(answer1, answer2);
+			} else {
+				return false;
+			}
+		};
+
+		$scope.showCorrectMessage = function(index) {
+			return validateAnswer(index);
+		};
+
+		$scope.showIncorrectMessage = function(index) {
+			if(!validateAnswer(index)) return true;
+		}; 	
 
 		$scope.checkAnswers = function() {
 
@@ -110,10 +122,6 @@ var navOptions = [
 					{
 						"id": 2,
 						"name": "Hello World"
-					},
-					{
-						"id": 3,
-						"name": "What's up?"
 					}
 				]
 			},
@@ -121,20 +129,8 @@ var navOptions = [
 				"exercise": 2,
 				"tasks": [
 					{
-						"id": 4,
+						"id": 3,
 						"name": "Hello"
-					},
-					{
-						"id": 5,
-						"name": "Hello World"
-					},
-					{
-						"id": 6,
-						"name": "What's up?"
-					},
-					{
-						"id": 25,
-						"name": "May I come in?"
 					}
 				]
 			}
