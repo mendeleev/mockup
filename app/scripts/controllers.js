@@ -25,14 +25,12 @@ ctrl.controller('taskCtrl', ['$scope', '$routeParams', '$http',
 
 		//check if the user answer is valid
 		var validateAnswer = function(index) {
-			var answer1 = $scope.task.options[index].answer;
-			var answer2 = $scope.answers[index];
+			var answer = $scope.task.options[index].answer;
+			var userAnswer = $scope.answers[index];
 
-			if(answer2) { 
-				return matchAnswer(answer1, answer2);
-			} else {
-				return false;
-			}
+			//match answer if userAnswer is true
+			//else return false
+			return userAnswer ? matchAnswer(answer, userAnswer) : false;
 		};
 
 		//show correct sign if the answer is valid
@@ -42,7 +40,7 @@ ctrl.controller('taskCtrl', ['$scope', '$routeParams', '$http',
 
 		//show incorrect message if the answer isn't valid
 		$scope.showIncorrectMessage = function(index) {
-			if(!validateAnswer(index)) return true;
+			return !validateAnswer(index);
 		}; 	
 
 		// show/hide answers validation

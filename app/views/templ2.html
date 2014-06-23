@@ -1,6 +1,5 @@
 <h1>{{task.name}}</h1>
 <h2>{{task.question}}</h2>
-<h3>Hello</h3>
 
 <div class="task">
 <form name="taskForm" novalidate>
@@ -11,7 +10,7 @@
 			</div>
 			<div class="answer">
 				<p ng-show="option.isExample">Example:</p>
-				<label>{{$index + 1}} 
+				<label>{{option.option}} 
 					<input type="text" ng-model="answers[$index]" name="a{{$index}}" id="a{{$index}}" required />
 					<span ng-show="showValidation">
 						<span ng-show="showCorrectMessage($index)" class="correct"></span>
