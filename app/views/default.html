@@ -22,9 +22,11 @@
 	</ul>
 
 	<ul class="variants">
-		<li ng-repeat="op in task.options">{{op.answer}}</li>
+		<li ng-repeat="answer in taskAnswers">{{answer}}</li>
 	</ul>
 </form>
+
+{{TestTest}}
 
 <button id="check" class="check" ng-click="checkAnswers()"></button>
 </div>

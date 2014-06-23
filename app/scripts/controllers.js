@@ -1,10 +1,22 @@
 var ctrl = angular.module('Controllers', ['testControllers']);
 
+//extend array with shuffle function
+Array.prototype.shuffle = function() {
+	var i = this.length;
+	while(--i) {
+		var j = Math.floor(Math.random() * i);
+		var temp = this[i];
+		this[i] = this[j];
+		this[j] = temp;
+	}
+};
+
 //task controller
 ctrl.controller('taskCtrl', ['$scope', '$routeParams', '$http', 
 	function($scope, $routeParams, $http) {
 		$scope.task = null;
 		$scope.answers = {};
+		$scope.taskAnswers = [];		
 
 		//switch on/off task validation
 		$scope.showValidation = false;
@@ -12,11 +24,21 @@ ctrl.controller('taskCtrl', ['$scope', '$routeParams', '$http',
 		//loading task data
 		$http.get('app/data/' + $routeParams.testId + '.json').success(function(data) {
 			$scope.task = data;
-
+			$scope.taskAnswers = getMixedTaskAnswers(data);
 			//loads individual template if task has
 			//if not, loads the default template
 			$scope.templateUrl = data.template ? "app/views/" + data.template : "app/views/default.html";		
 		});
+
+		//getting mixed array with answers
+		var getMixedTaskAnswers = function(data) {
+			var answers = [];
+			angular.forEach(data.options, function(option) {
+				answers.push(option.answer);
+			});
+			answers.shuffle();
+			return answers || [];
+		};
 
 		//returns boolean on matching answers
 		var matchAnswer = function(answer1, answer2) {
