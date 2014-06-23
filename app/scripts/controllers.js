@@ -6,8 +6,14 @@ ctrl.controller('taskCtrl', ['$scope', '$routeParams', '$http',
 		$scope.answers = {};
 		$scope.showValidation = false;
 		$http.get('app/data/' + $routeParams.testId + '.json').success(function(data) {
-			$scope.task = data;			
+			$scope.task = data;
+			if(data.template) { 
+				$scope.templateUrl = "app/views/" + data.template;
+			} else {
+				$scope.templateUrl = "app/views/tmpl.html";
+			}		
 		});
+
 
 		var matchAnswer = function(answer1, answer2) {
 			return answer1.toLowerCase() === answer2.toLowerCase();
@@ -86,8 +92,6 @@ ctrl.controller('navigationCtrl', ['$scope', '$http', '$location',
 
 		var testList = getTestList();
 		var current = getCurrentPos(testList);
-		console.log(testList);
-		console.log(current);
 
 		$scope.setCurrentPos = function(pos) {
 			current = pos;

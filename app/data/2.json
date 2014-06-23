@@ -2,6 +2,7 @@
 	"name": "Exercise 3 Vocabulary",
 	"question": "What school activities do you see on the picture?",
 	"imgPath": "exercise1",
+	"template": "templ2.html",
 	"options": [  					
 					{
 						"option": "enjoing a field trip",
