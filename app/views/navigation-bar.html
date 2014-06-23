@@ -3,13 +3,11 @@
 	<span ng-click="nextTask()" class="next"></span>
 
 	<ul class="nav-icons">
-		<li ng-repeat="t in navigation">
-			{{t.exercise}}
-			<ul class="nav-options">
-				<li ng-repeat="op in t.tasks">
-					<a href="#/{{op.id}}" ng-click="setCurrentPos($index)">{{op.id}}</a>
-				</li>
-			</ul>
+		<li ng-repeat="nav in navigation">
+			<span class="exercise_number">{{nav.exercise}}</span>
+			<span ng-repeat="op in nav.tasks">
+	<a href="#/{{op.id}}" ng-click="setCurrentPos($index)" ng-class="{ activeNav: navActive(op.id) }" ></a>
+			</span>						
 		</li>
 	</ul>
 </section>

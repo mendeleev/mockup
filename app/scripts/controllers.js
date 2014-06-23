@@ -16,7 +16,8 @@ ctrl.controller('taskCtrl', ['$scope', '$routeParams', '$http',
 	function($scope, $routeParams, $http) {
 		$scope.task = null;
 		$scope.answers = {};
-		$scope.taskAnswers = [];		
+		$scope.taskAnswers = [];
+		$scope.mixedOptions = [];		
 
 		//switch on/off task validation
 		$scope.showValidation = false;
@@ -25,6 +26,7 @@ ctrl.controller('taskCtrl', ['$scope', '$routeParams', '$http',
 		$http.get('app/data/' + $routeParams.testId + '.json').success(function(data) {
 			$scope.task = data;
 			$scope.taskAnswers = getMixedTaskAnswers(data);
+			$scope.mixedOptions = getMixedOptions(data);
 			//loads individual template if task has
 			//if not, loads the default template
 			$scope.templateUrl = data.template ? "app/views/" + data.template : "app/views/default.html";		
@@ -40,14 +42,34 @@ ctrl.controller('taskCtrl', ['$scope', '$routeParams', '$http',
 			return answers || [];
 		};
 
+		//getting mixed options
+		var getMixedOptions = function(data) {
+			var list = [];
+			angular.forEach(data.options, function(option) {
+				var obj = new Object();
+				obj.option = option.option;
+				obj.answer = option.answer;
+				list.push(obj);
+			});
+
+			list.shuffle();
+			return list || [];
+		};
+
 		//returns boolean on matching answers
 		var matchAnswer = function(answer1, answer2) {
 			return answer1.toLowerCase() === answer2.toLowerCase();
 		};
 
+		//get the task answer
+		var getTaskAnswer = function(index, param) {
+			if(param) return param.answer ? param.answer : $scope.task.options[index].answer;
+			return $scope.task.options[index].answer;
+		};
+
 		//check if the user answer is valid
-		var validateAnswer = function(index) {
-			var answer = $scope.task.options[index].answer;
+		var validateAnswer = function(index, param) {
+			var answer = getTaskAnswer(index, param);
 			var userAnswer = $scope.answers[index];
 
 			//match answer if userAnswer is true
@@ -56,13 +78,13 @@ ctrl.controller('taskCtrl', ['$scope', '$routeParams', '$http',
 		};
 
 		//show correct sign if the answer is valid
-		$scope.showCorrectMessage = function(index) {
-			return validateAnswer(index);
+		$scope.showCorrectMessage = function(index, param) {
+			return validateAnswer(index, param);
 		};
 
 		//show incorrect message if the answer isn't valid
-		$scope.showIncorrectMessage = function(index) {
-			return !validateAnswer(index);
+		$scope.showIncorrectMessage = function(index, param) {
+			return !validateAnswer(index, param);
 		}; 	
 
 		// show/hide answers validation
@@ -137,6 +159,10 @@ ctrl.controller('navigationCtrl', ['$scope', '$http', '$location',
 				current--;
 				$location.path(testList[current].toString());
 			}
+		};
+
+		$scope.navActive = function(id) {
+			return id === getPathId();
 		};		
 	}	
 ]);
