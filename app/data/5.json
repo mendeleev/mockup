@@ -1,0 +1,44 @@
+{
+	"name": "Exercise 2 Vocabulary",
+	"question": "What are the kids doing?",
+	"imgPath": "exercise5",
+	"template": "template2.html",
+	"options": [  					
+					{
+						"option": "the kids are cooking",
+						"answer": "1",
+						"img": "1.png",
+						"isExample": false
+					},
+					{
+						"option": "the child is sleaping",
+						"answer": "2",
+						"img": "2.png",
+						"isExample": false
+					},
+					{
+						"option": "the kids are eating icecream",
+						"answer": "3",
+						"img": "3.png",
+						"isExample": false
+					},
+					{
+						"option": "the kids are painting",
+						"answer": "4",
+						"img": "4.png",
+						"isExample": false
+					},
+					{
+						"option": "the kids are playing soccer",
+						"answer": "5",
+						"img": "5.png",
+						"isExample": false
+					},
+					{
+						"option": "the kids are jumping",
+						"answer": "6",
+						"img": "6.png",
+						"isExample": false
+					}
+  				]
+}

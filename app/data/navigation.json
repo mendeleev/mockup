@@ -1,0 +1,32 @@
+[
+{
+	"exercise": 1,
+	"tasks": [
+		{
+			"id": 1,
+			"name": "Label the weather symbols"
+		},
+		{
+			"id": 2,
+			"name": "Label the vehicles"
+		},
+		{
+			"id": 3,
+			"name": "Label the pictures"
+		}
+	]
+},
+{
+	"exercise": 2,
+	"tasks": [
+		{
+			"id": 4,
+			"name": "What school activities do you see on the picture?"
+		},
+		{
+			"id": 5,
+			"name": "Hello"
+		}
+	]
+}
+]

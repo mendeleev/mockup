@@ -1,0 +1,44 @@
+{
+	"name": "Exercise 2 Vocabulary",
+	"question": "What school activities do you see on the picture?",
+	"imgPath": "exercise4",
+	"template": "template2.html",
+	"options": [  					
+					{
+						"option": "doing a project",
+						"answer": "1",
+						"img": "1.png",
+						"isExample": false
+					},
+					{
+						"option": "enjoing a field trip",
+						"answer": "2",
+						"img": "2.png",
+						"isExample": false
+					},
+					{
+						"option": "working on computers",
+						"answer": "3",
+						"img": "3.png",
+						"isExample": false
+					},
+					{
+						"option": "taking a test",
+						"answer": "4",
+						"img": "4.png",
+						"isExample": false
+					},
+					{
+						"option": "giving a presentation",
+						"answer": "5",
+						"img": "5.png",
+						"isExample": false
+					},
+					{
+						"option": "practicing yoga",
+						"answer": "6",
+						"img": "6.png",
+						"isExample": false
+					}
+  				]
+}

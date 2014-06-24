@@ -27,6 +27,7 @@ ctrl.controller('taskCtrl', ['$scope', '$routeParams', '$http',
 			$scope.task = data;
 			$scope.taskAnswers = getMixedTaskAnswers(data);
 			$scope.mixedOptions = getMixedOptions(data);
+			setExampleValue($scope.task.options);
 			//loads individual template if task has
 			//if not, loads the default template
 			$scope.templateUrl = data.template ? "app/views/" + data.template : "app/views/default.html";		
@@ -40,6 +41,15 @@ ctrl.controller('taskCtrl', ['$scope', '$routeParams', '$http',
 			});
 			answers.shuffle();
 			return answers || [];
+		};
+
+		//setting example value
+		var setExampleValue = function() {
+			for(var i = 0; i < $scope.task.options.length; i++) {
+				if($scope.task.options[i].isExample) {
+					$scope.answers[i] = $scope.task.options[i].answer;
+				} 					
+			}
 		};
 
 		//getting mixed options
@@ -97,7 +107,19 @@ ctrl.controller('taskCtrl', ['$scope', '$routeParams', '$http',
 //navigation controller
 ctrl.controller('navigationCtrl', ['$scope', '$http', '$location', 
 	function($scope, $http, $location) {
-		$scope.navigation = navOptions;	
+		$scope.navigation = null;
+		var testList = null;
+		var current = 0;
+
+		$http.get('app/data/navigation.json').success(function(data) {
+			$scope.navigation = data;
+
+			//creating a new list
+			testList = getTestList();
+
+			//getting current position
+			current = getCurrentPos(testList);
+		});	
 
 		//getting test id from the url
 		var getPathId = function() {
@@ -131,11 +153,7 @@ ctrl.controller('navigationCtrl', ['$scope', '$http', '$location',
 			return currentPos;
 		};	
 
-		//creating a new list
-		var testList = getTestList();
-
-		//getting current position
-		var current = getCurrentPos(testList);
+		
 
 		//set current position
 		//when click on the navigation element
@@ -166,28 +184,3 @@ ctrl.controller('navigationCtrl', ['$scope', '$http', '$location',
 		};		
 	}	
 ]);
-
-var navOptions = [
-			{
-				"exercise": 1,
-				"tasks": [
-					{
-						"id": 1,
-						"name": "Hello"
-					},
-					{
-						"id": 2,
-						"name": "Hello World"
-					}
-				]
-			},
-			{
-				"exercise": 2,
-				"tasks": [
-					{
-						"id": 3,
-						"name": "Hello"
-					}
-				]
-			}
-		];
