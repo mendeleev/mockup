@@ -1,4 +1,4 @@
-var ctrl = angular.module('Controllers', ['testControllers']);
+var ctrl = angular.module('Controllers', []);
 
 //extend array with shuffle function
 Array.prototype.shuffle = function() {
